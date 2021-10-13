@@ -1,4 +1,5 @@
 ﻿using System;
+using Lights;
 using UnityEngine;
 
 namespace Plant
@@ -51,7 +52,7 @@ namespace Plant
         [ContextMenu("Harakiri")]
         private void HandleOnDeath()
         {
-            LightsHolder.Instance.ChangeFlickerInZone(transform.position, true);
+            LightsManager.Instance.ChangeFlickerInZone(transform.position, true);
             Instantiate(ghostPlant, transform.position + Vector3.up, Quaternion.identity);
         }
     }

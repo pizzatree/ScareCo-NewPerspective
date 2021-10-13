@@ -27,4 +27,10 @@ public class Health : MonoBehaviour
         if(currentValue <= 0f)
             OnDeath?.Invoke();
     }
+
+    [ContextMenu("Reduce Health")]
+    private void DemoReduce() => ChangeHealth(-5f);
+    
+    [ContextMenu("Increase Health")]
+    private void DemoIncrease() => ChangeHealth(5f);
 }
