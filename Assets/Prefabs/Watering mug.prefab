@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 5997372316112834706}
   - component: {fileID: 5634584955308601948}
   - component: {fileID: 2959216452761924137}
+  - component: {fileID: 8196606194336297856}
   m_Layer: 0
   m_Name: Watering mug
   m_TagString: Untagged
@@ -234,6 +235,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.77, z: 2.14}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8196606194336297856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538153562373930150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6c9734e70f06d44b301774462d6fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3927970852472778232
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +461,6 @@ GameObject:
   - component: {fileID: 7570529975748458955}
   - component: {fileID: 4894771319922076697}
   - component: {fileID: 7081645144379589535}
-  - component: {fileID: 1304675665801069999}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -464,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747949186724370335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4202381029004338716}
@@ -478,7 +490,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747949186724370335}
   serializedVersion: 6
-  lengthInSec: 10
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -543,7 +555,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -553,7 +565,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5191,18 +5203,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &1304675665801069999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8747949186724370335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f6c9734e70f06d44b301774462d6fe8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1007113891120559028
 PrefabInstance:
   m_ObjectHideFlags: 0

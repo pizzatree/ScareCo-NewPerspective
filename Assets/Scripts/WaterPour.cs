@@ -4,22 +4,37 @@ using UnityEngine;
 
 public class WaterPour : MonoBehaviour
 {
-    ParticleSystem waterParticle;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float pourRate = 5.0f;
+    private ParticleSystem waterParticle;
+    private Health health;
+    private void Start()
     {
-        waterParticle = GetComponent<ParticleSystem>();
+        waterParticle = GetComponentInChildren<ParticleSystem>();
+        health = GetComponent<Health>();
+
+        health.OnDeath += sheDead;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        waterParticle.Play();
-        if(Vector3.Angle(Vector3.down, transform.up) <= 90f){
+        health.OnDeath -= sheDead;
+    }
+    private void Update()
+    {
+        var tippedOver = transform.up.y <= 0.7f;
+        
+        if(tippedOver && !waterParticle.isPlaying)
             waterParticle.Play();
-        }
-        else {
-            waterParticle.Stop();
-        }
+
+        if(!tippedOver)
+            waterParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+    
+        health.ChangeHealth(-pourRate * Time.deltaTime); 
+    }
+
+    private void sheDead(){
+        // explode
+        Destroy(gameObject);
     }
 }
