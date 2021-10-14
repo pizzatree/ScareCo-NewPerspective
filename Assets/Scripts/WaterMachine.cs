@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class WaterMachine : MonoBehaviour
 {
-    [Header("Water Spawn")]
+    [Header("Water Spawn")] 
     [SerializeField] private GameObject waterPrefab;
     [SerializeField] private Transform  spawnPoint;
 
-    [Header("Button")]
+    [Header("Button")] 
     [SerializeField] private Transform button;
     [SerializeField] private float     buttonThreshold = 0.1f;
 
@@ -23,11 +23,15 @@ public class WaterMachine : MonoBehaviour
 
     private void Update()
     {
-        var buttonActuated = Mathf.Abs(Vector3.Distance(buttonStartPos, button.localPosition)) > buttonThreshold;
-        
+        var pos = button.localPosition;
+        pos.z                = Mathf.Clamp(pos.z, buttonStartPos.z - buttonThreshold, buttonStartPos.z);
+        button.localPosition = pos;
+
+        var buttonActuated = Mathf.Abs(Vector3.Distance(buttonStartPos, button.localPosition)) > buttonThreshold * 0.5f;
+
         if(isActivated && buttonActuated)
             return;
-        
+
         if(buttonActuated)
         {
             isActivated = true;
@@ -38,7 +42,7 @@ public class WaterMachine : MonoBehaviour
         isActivated = false;
     }
 
-    public void DispenseWater()
+    private void DispenseWater()
     {
         Instantiate(waterPrefab, spawnPoint.position, transform.rotation);
     }

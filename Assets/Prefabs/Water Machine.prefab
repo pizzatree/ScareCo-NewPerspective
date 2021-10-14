@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &943324018196277588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132352492054719335}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.08, y: 3.06, z: 3.07}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &943324016840988728
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 943324017559514170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.90000004, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.90000004, y: 0.9, z: 0.4}
   m_Children: []
   m_Father: {fileID: 943324017928542615}
   m_RootOrder: 0
@@ -330,7 +343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943324017928542608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.35}
+  m_LocalPosition: {x: 0, y: 0, z: 0.605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 943324017559514169}
@@ -348,7 +361,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9, z: 0.9}
+  m_Size: {x: 0.9, y: 0.9, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &943324017928542613
 Rigidbody:
@@ -377,7 +390,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0.35000086}
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0.60499907}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -542,19 +555,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &943324018196277588
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132352492054719335}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.08, y: 3.06, z: 3.07}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &943324017010546230
 PrefabInstance:
   m_ObjectHideFlags: 0

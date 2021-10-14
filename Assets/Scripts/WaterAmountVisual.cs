@@ -12,8 +12,7 @@ public class WaterAmountVisual : MonoBehaviour
 
     private Health health;
     
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         water          = transform.Find("Water");
         waterScale     = water.localScale;
