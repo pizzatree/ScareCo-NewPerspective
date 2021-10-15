@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WaterPour : MonoBehaviour
 {
-    [SerializeField]
-    private float pourRate = 5.0f;
+    [SerializeField] private float pourRate = 5.0f;
+    [SerializeField] private AudioSource popSound;
     private ParticleSystem waterParticle;
     private Health health;
     private void Start()
@@ -29,12 +29,13 @@ public class WaterPour : MonoBehaviour
 
         if(!tippedOver)
             waterParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-    
-        health.ChangeHealth(-pourRate * Time.deltaTime); 
+        else
+            health.ChangeHealth(-pourRate * Time.deltaTime); 
     }
 
     private void sheDead(){
-        // explode
-        Destroy(gameObject);
+        popSound = GetComponentInChildren<AudioSource>();
+        popSound.Play();
+        Destroy(gameObject, popSound.clip.length);
     }
 }
