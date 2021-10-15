@@ -285,7 +285,7 @@ MonoBehaviour:
     type: 3}
   spawnPoint: {fileID: 943324017690880200}
   button: {fileID: 943324017928542615}
-  buttonThreshold: 0.1
+  buttonThreshold: 0.2
 --- !u!1 &943324017690880201
 GameObject:
   m_ObjectHideFlags: 0

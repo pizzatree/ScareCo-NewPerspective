@@ -313,6 +313,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11346413}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &12220023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2764921037832162238, guid: 0b5f198c853b9794680bf089e64daf28,
+    type: 3}
+  m_PrefabInstance: {fileID: 1282690514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &17161018
 GameObject:
   m_ObjectHideFlags: 0
@@ -10265,7 +10271,7 @@ PrefabInstance:
     - target: {fileID: 8279880922762686292, guid: c42e937729b0f4a14b710979c228af8d,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c42e937729b0f4a14b710979c228af8d, type: 3}
@@ -11882,7 +11888,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1282690514}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 12220023}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34c0cb8bdc24787439e43b7f145ac31c, type: 3}
@@ -13504,7 +13510,7 @@ PrefabInstance:
     - target: {fileID: 2707102280528190221, guid: e482d4bb1755449e8af89a87913afe54,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4633510118224207595, guid: e482d4bb1755449e8af89a87913afe54,
         type: 3}
@@ -16771,6 +16777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 907476240}
+  - component: {fileID: 907476241}
   m_Layer: 0
   m_Name: '[ VR Assets ]'
   m_TagString: Untagged
@@ -16803,6 +16810,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &907476241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907476239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce814135bded43845884b9f3d9ce4dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simulator: {fileID: 12220023}
+  XR: {fileID: 917267792}
+--- !u!1 &917267792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6707005887722074733, guid: 319c9c4cb939912429c7786a67e40f0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1914484448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &920821802
 GameObject:
   m_ObjectHideFlags: 0
@@ -30998,7 +31025,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1914484448}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 917267792}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34c0cb8bdc24787439e43b7f145ac31c, type: 3}
@@ -34150,7 +34177,7 @@ PrefabInstance:
     - target: {fileID: 6707005887722074733, guid: 319c9c4cb939912429c7786a67e40f0d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 319c9c4cb939912429c7786a67e40f0d, type: 3}
@@ -39185,6 +39212,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 943324017559514170, guid: d68064a70df559443a8292086a3ab9b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 943324017625702228, guid: d68064a70df559443a8292086a3ab9b7,
         type: 3}
       propertyPath: m_RootOrder
@@ -39244,6 +39276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Water Machine
+      objectReference: {fileID: 0}
+    - target: {fileID: 943324017928542608, guid: d68064a70df559443a8292086a3ab9b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 943324017928542612, guid: d68064a70df559443a8292086a3ab9b7,
         type: 3}
