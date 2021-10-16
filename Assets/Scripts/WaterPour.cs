@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class WaterPour : MonoBehaviour
 {
-    [SerializeField] private float          pourRate = 5.0f;
-    [SerializeField] private AudioSource    popSound;
-    [SerializeField] private GameObject explosion;
+    [SerializeField] private float       pourRate = 5.0f;
+    [SerializeField] private AudioSource popSound;
+    [SerializeField] private GameObject  explosion;
 
     private ParticleSystem waterParticle;
     private Health         health;
