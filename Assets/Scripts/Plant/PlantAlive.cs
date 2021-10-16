@@ -39,6 +39,11 @@ namespace Plant
             health.ChangeHealth(-rateOfDrying * Time.deltaTime);
         }
 
+        private void OnParticleCollision(GameObject other)
+        {
+            Water(3f);        
+        }
+
         public void Water(float amount)
         {
             health.ChangeHealth(amount);

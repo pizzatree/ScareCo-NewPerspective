@@ -4,38 +4,59 @@ using UnityEngine;
 
 public class WaterPour : MonoBehaviour
 {
-    [SerializeField] private float pourRate = 5.0f;
+    [SerializeField] private float       pourRate = 5.0f;
     [SerializeField] private AudioSource popSound;
+
     private ParticleSystem waterParticle;
-    private Health health;
+    private Health         health;
+
+    private bool readyToDie;
+
     private void Start()
     {
         waterParticle = GetComponentInChildren<ParticleSystem>();
-        health = GetComponent<Health>();
+        health        = GetComponent<Health>();
 
-        health.OnDeath += sheDead;
+        health.OnDeath += SetReadyForDeath;
     }
 
     private void OnDisable()
     {
-        health.OnDeath -= sheDead;
+        health.OnDeath -= SetReadyForDeath;
     }
+
     private void Update()
     {
-        var tippedOver = transform.up.y <= 0.7f;
+        if(readyToDie)
+        {
+            waterParticle.Stop();
+            return;
+        }        
         
+        var tippedOver = transform.up.y <= 0.7f;
+
         if(tippedOver && !waterParticle.isPlaying)
             waterParticle.Play();
 
         if(!tippedOver)
-            waterParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            waterParticle.Stop();
         else
-            health.ChangeHealth(-pourRate * Time.deltaTime); 
+            health.ChangeHealth(-pourRate * Time.deltaTime);
     }
 
-    private void sheDead(){
+    public void CheckDeath() // To be called by VRTK Ungrabbed Event
+    {
+        if(readyToDie)
+            sheDead();
+    }
+
+    private void SetReadyForDeath()
+        => readyToDie = true;
+
+    private void sheDead()
+    {
         popSound = GetComponentInChildren<AudioSource>();
         popSound.Play();
-        Destroy(gameObject, popSound.clip.length);
+        Destroy(gameObject.transform.parent.parent.gameObject, popSound.clip.length);
     }
 }
