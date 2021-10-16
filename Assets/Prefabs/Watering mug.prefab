@@ -5910,6 +5910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pourRate: 15
   popSound: {fileID: 5269946404207139817}
+  explosion: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
 --- !u!1001 &1350552406114354043
 PrefabInstance:
   m_ObjectHideFlags: 0
