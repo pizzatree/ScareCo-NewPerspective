@@ -1,5 +1,4 @@
-﻿using System;
-using Lights;
+﻿using Lights;
 using UnityEngine;
 
 namespace Plant
@@ -9,50 +8,26 @@ namespace Plant
     {
         [SerializeField] private float      rateOfDrying = 1f;
         [SerializeField] private GameObject ghostPlant;
-        
-        private Health         health;
-        private SpriteRenderer uiHealth;
-        
+
+        private Health health;
+
         private void Start()
         {
-            health                 =  GetComponent<Health>();
-            health.OnDeath         += HandleOnDeath;
-            health.OnHealthChanged += HandleOnHealthChanged;
-
-            uiHealth = GetComponentInChildren<SpriteRenderer>();
-
-            if(uiHealth)
-                return;
-            
-            Debug.LogError($"Add sprite renderer for Health UI on {name}");
-            health.OnHealthChanged -= HandleOnHealthChanged;
+            health         =  GetComponent<Health>();
+            health.OnDeath += HandleOnDeath;
         }
 
         private void OnDisable()
-        {
-            health.OnDeath         -= HandleOnDeath;
-            health.OnHealthChanged -= HandleOnHealthChanged;
-        }
+            => health.OnDeath -= HandleOnDeath;
 
         private void Update()
-        {
-            health.ChangeHealth(-rateOfDrying * Time.deltaTime);
-        }
+            => health.ChangeHealth(-rateOfDrying * Time.deltaTime);
 
         private void OnParticleCollision(GameObject other)
-        {
-            Water(3f);        
-        }
+            => Water(3f);
 
-        public void Water(float amount)
-        {
-            health.ChangeHealth(amount);
-        }
-
-        private void HandleOnHealthChanged(float pct)
-        {
-            uiHealth.color = Color.Lerp(Color.red, Color.green, pct * pct); // pct^2 to accelerate going red
-        }
+        private void Water(float amount)
+            => health.ChangeHealth(amount);
 
         [ContextMenu("Harakiri")]
         private void HandleOnDeath()
