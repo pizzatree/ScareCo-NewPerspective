@@ -7,16 +7,17 @@ namespace Plant
     {
         private Transform target;
         private float     moveSpeed      = 2f;
-        private float     followDistance = 3f;
-        private float     bounceSpeed    = 3f;
-        private float     bounceScale    = 0.3f;
+        private float     followDistance = 2f;
+        private float     bounceSpeed    = 3.5f;
+        private float     bounceScale    = 0.45f;
         
         private                  Transform model;
 
         private void Start()
         {
-            target = GameObject.FindWithTag("Player").transform;
-            model  = transform.GetChild(0);
+            target           = GameObject.FindWithTag("Player").transform;
+            model            = transform.GetChild(0);
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             
             var renderers = GetComponentsInChildren<MeshRenderer>();
             foreach(var meshRenderer in renderers)
@@ -43,5 +44,8 @@ namespace Plant
 
             meshRenderer.materials = mats;
         }
+
+        public void Harakiri()
+            => Destroy(gameObject);
     }
 }

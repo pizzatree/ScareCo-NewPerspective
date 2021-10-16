@@ -15921,7 +15921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c733cb4bcc649c8b90351e1a42118ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfDrying: 10
+  rateOfDrying: 2
 --- !u!114 &751823079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15935,7 +15935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 100
-  allowRevive: 0
+  allowRevive: 1
 --- !u!65 &751823080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47401,6 +47401,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1285498479}
     m_Modifications:
+    - target: {fileID: 1098913227, guid: bd46577fd23e0064289f404f7fa1e3f3, type: 3}
+      propertyPath: itemOutputVelocityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4728333222672717545, guid: bd46577fd23e0064289f404f7fa1e3f3,
         type: 3}
       propertyPath: m_RootOrder

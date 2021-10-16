@@ -8,12 +8,14 @@ namespace Plant
     {
         [SerializeField] private float      rateOfDrying = 1f;
 
-        private Health health;
+        private Health     health;
+        private PlantGhost myGhost;
 
         private void Start()
         {
             health         =  GetComponent<Health>();
             health.OnDeath += HandleOnDeath;
+            health.OnRevive += HandleOnRevive;
         }
 
         private void OnDisable()
@@ -34,13 +36,20 @@ namespace Plant
             LightsManager.Instance.ChangeFlickerInZone(transform.position, true);
             CreateGhost();
         }
+        
+        [ContextMenu("Revive")]
+        private void HandleOnRevive()
+        {
+            LightsManager.Instance.ChangeFlickerInZone(transform.position, false);
+            myGhost?.Harakiri();
+        }
 
         private void CreateGhost()
         {
             var model = transform.Find("Model");
 
             var ghost = Instantiate(model, transform.position + Vector3.up, Quaternion.identity).gameObject;
-            ghost.AddComponent<PlantGhost>();
+            myGhost = ghost.AddComponent<PlantGhost>();
             ghost.name = $"{name}'s ghost";
         }
     }

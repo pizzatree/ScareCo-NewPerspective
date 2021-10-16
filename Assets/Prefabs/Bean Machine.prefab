@@ -58,6 +58,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyName: Quarter
+  OnGatewayClearedVisual:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1184801599
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,10 +220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b746de1317f43f40a9582f4076dbe43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 0}
-  spawnPos: {fileID: 0}
+  spawnPrefab: {fileID: 311180130323118523, guid: 845a5d2587f484d41975818b409aa121,
+    type: 3}
+  spawnPos: {fileID: 1786179553}
   numItemsPerToken: 3
   itemOutputVelocityScale: 1
+  delayPerItem: 1
 --- !u!64 &50087920819715987
 MeshCollider:
   m_ObjectHideFlags: 0
