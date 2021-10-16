@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class WaterPour : MonoBehaviour
 {
-    [SerializeField] private float       pourRate = 5.0f;
-    [SerializeField] private AudioSource popSound;
+    [SerializeField] private float          pourRate = 5.0f;
+    [SerializeField] private AudioSource    popSound;
+    [SerializeField] private GameObject explosion;
 
     private ParticleSystem waterParticle;
     private Health         health;
@@ -56,8 +57,11 @@ public class WaterPour : MonoBehaviour
 
     private void sheDead()
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        
         popSound = GetComponentInChildren<AudioSource>();
         popSound.Play();
-        Destroy(gameObject.transform.parent.parent.gameObject, popSound.clip.length);
+        
+        Destroy(gameObject.transform.parent.parent.gameObject);
     }
 }
