@@ -4,21 +4,20 @@ using UnityEngine.Serialization;
 
 public class ItemSpawner : MonoBehaviour
 {
-    [FormerlySerializedAs("beanPrefab")] [SerializeField]
-    private GameObject spawnPrefab;
-    [FormerlySerializedAs("beanSpawnPos")] [SerializeField]
-    private Transform spawnPos;
-    [FormerlySerializedAs("numBeansPerQuarter")] [SerializeField]
-    private int numItemsPerToken = 3;
-
+    [SerializeField] private GameObject spawnPrefab;
+    [SerializeField] private Transform  spawnPos;
+    
+    [SerializeField] private int   numItemsPerToken        = 3;
     [SerializeField] private float itemOutputVelocityScale = 1f;
 
     private void Start()
     {
-        GetComponentInChildren<CurrencyEater>().OnReceivedCurrency += HandleReceivedCurrency;
+        var currencyEater = GetComponentInChildren<CurrencyEater>();
+        if(currencyEater)
+            currencyEater.OnReceivedCurrency += StartDispensingItems;
     }
 
-    private void HandleReceivedCurrency()
+    public void StartDispensingItems()
     {
         StartCoroutine(nameof(DispenseItems));
     }
