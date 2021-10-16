@@ -9,12 +9,13 @@ public class ItemSpawner : MonoBehaviour
     
     [SerializeField] private int   numItemsPerToken        = 3;
     [SerializeField] private float itemOutputVelocityScale = 1f;
+    [SerializeField] private float delayPerItem            = 1f;
 
     private void Start()
     {
-        var currencyEater = GetComponentInChildren<CurrencyEater>();
-        if(currencyEater)
-            currencyEater.OnReceivedCurrency += StartDispensingItems;
+        var dispenserGateway = GetComponentInChildren<IDispenserGateway>();
+        if(dispenserGateway != null)
+            dispenserGateway.OnGatewayCleared += StartDispensingItems;
     }
 
     public void StartDispensingItems()
@@ -30,7 +31,7 @@ public class ItemSpawner : MonoBehaviour
             var force = new Vector3(Random.value, Random.value, Random.value) * itemOutputVelocityScale;
             item.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(delayPerItem);
         }
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-public class CurrencyEater : MonoBehaviour
+public class CurrencyEater : MonoBehaviour, IDispenserGateway
 {
     [SerializeField] private string currencyName = "Quarter";
     
-    public event Action OnReceivedCurrency;
+    public event Action OnGatewayCleared;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -13,7 +13,7 @@ public class CurrencyEater : MonoBehaviour
         if(!isProperCurrency)
             return;
         
-        OnReceivedCurrency?.Invoke();
+        OnGatewayCleared?.Invoke();
         other.collider.GetComponent<Destroyer>().Harakiri();
     }
 }
