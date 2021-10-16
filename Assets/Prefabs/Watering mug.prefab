@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 841500212258883136}
   - component: {fileID: 1078866570760026037}
   - component: {fileID: 7145429792282079675}
+  - component: {fileID: 3955063528536087736}
   m_Layer: 10
   m_Name: Watering mug
   m_TagString: Untagged
@@ -225,7 +226,18 @@ MonoBehaviour:
       m_Calls: []
   Grabbed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3955063528536087736}
+        m_MethodName: SetAbleToExplode
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Ungrabbed:
     m_PersistentCalls:
       m_Calls:
@@ -239,6 +251,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3955063528536087736}
+        m_MethodName: SetAbleToExplode
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   LastUngrabbed:
     m_PersistentCalls:

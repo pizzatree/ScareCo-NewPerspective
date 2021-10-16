@@ -34,8 +34,8 @@ public class LocomotionSwitcher : MonoBehaviour
         teleport = !teleport;
         
         var nextLocomotionType = teleport ? "continuous" : "teleport";
-        var newText = $"Change locomotion \n" +
-                      $"to <color=\"red\">{nextLocomotionType}</color> by pressing on me!";
+        var newText = $"Change locomotion to" +
+                      $"\n<color=\"red\">{nextLocomotionType}</color>\n by pressing on me!";
         computerText.text = newText;
 
         teleportMovement.SetActive(teleport);
