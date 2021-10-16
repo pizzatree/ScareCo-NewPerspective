@@ -3,7 +3,27 @@ guid: 6d22f2abd6ff9994d894e15ce78f2d23
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Batang Pisang
+    second: {fileID: 2100000, guid: 4174d39f2b0c6dc4a9ea261c534e952c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buah_gedang
+    second: {fileID: 2100000, guid: 0440d2d55c86fb440b56565da2ecae4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ontong
+    second: {fileID: 2100000, guid: 62367efe804ef0b4d9286a8fc0f02093, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dong_gedang
+    second: {fileID: 2100000, guid: f33aa881ff768404f849670815385e19, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

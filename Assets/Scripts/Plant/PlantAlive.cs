@@ -7,7 +7,6 @@ namespace Plant
     public class PlantAlive : MonoBehaviour
     {
         [SerializeField] private float      rateOfDrying = 1f;
-        [SerializeField] private GameObject ghostPlant;
 
         private Health health;
 
@@ -33,7 +32,16 @@ namespace Plant
         private void HandleOnDeath()
         {
             LightsManager.Instance.ChangeFlickerInZone(transform.position, true);
-            Instantiate(ghostPlant, transform.position + Vector3.up, Quaternion.identity);
+            CreateGhost();
+        }
+
+        private void CreateGhost()
+        {
+            var model = transform.Find("Model");
+
+            var ghost = Instantiate(model, transform.position + Vector3.up, Quaternion.identity).gameObject;
+            ghost.AddComponent<PlantGhost>();
+            ghost.name = $"{name}'s ghost";
         }
     }
 }

@@ -15485,6 +15485,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1756652776302202, guid: 114b3c3ce4645364a97c8f0803bed65b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4419020640412130, guid: 114b3c3ce4645364a97c8f0803bed65b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -15917,8 +15921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c733cb4bcc649c8b90351e1a42118ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfDrying: 1
-  ghostPlant: {fileID: 0}
+  rateOfDrying: 10
 --- !u!114 &751823079
 MonoBehaviour:
   m_ObjectHideFlags: 0
