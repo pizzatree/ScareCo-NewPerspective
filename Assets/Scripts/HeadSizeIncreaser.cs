@@ -7,5 +7,5 @@ public class HeadSizeIncreaser : MonoBehaviour
     [SerializeField] private float increaseRate = 1.05f;
 
     private void Start()
-        => GetComponent<CurrencyEater>().OnReceivedCurrency += () => transform.localScale *= increaseRate;
+        => GetComponent<CurrencyEater>().OnGatewayCleared += () => transform.localScale *= increaseRate;
 }
