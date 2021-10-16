@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Plant
@@ -22,6 +21,11 @@ namespace Plant
             var renderers = GetComponentsInChildren<MeshRenderer>();
             foreach(var meshRenderer in renderers)
                 ApplyTransparency(meshRenderer);
+
+            bounceScale    *= Random.Range(0.75f, 1.25f);
+            bounceSpeed    *= Random.Range(0.75f, 1.25f);
+            moveSpeed      *= Random.Range(0.75f, 1.25f);
+            followDistance *= Random.Range(0.50f, 1.75f);
         }
 
         private void LateUpdate()
