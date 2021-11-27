@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class WorldChanger : MonoBehaviour
 {
-    private ISceneChanger sceneChanger = new SceneChangerDebugLog();
+    private ISceneChanger sceneChanger = new SceneChangerSceneLoad();
 
     public void ChangeScene(SwitchToSceneButton switchTo)
         => sceneChanger.SwitchTo(switchTo.scene);
