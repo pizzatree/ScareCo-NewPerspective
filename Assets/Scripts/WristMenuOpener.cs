@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class WristMenuOpener : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private Transform leftHandAlias;
+    [FormerlySerializedAs("leftHandAlias")]
+    [SerializeField] private Transform handAlias;
     [SerializeField] private Transform headsetAlias;
     [SerializeField] private Transform menuRoot;
 
@@ -28,7 +30,7 @@ public class WristMenuOpener : MonoBehaviour
     private void Start()
     {
         UpdateTransform();
-        transform.SetParent(leftHandAlias);
+        transform.SetParent(handAlias);
 
         SetMenuActive(false);
     }
@@ -103,11 +105,11 @@ public class WristMenuOpener : MonoBehaviour
 
     private void UpdateTransform()
     {
-        if(!leftHandAlias || !headsetAlias)
+        if(!handAlias || !headsetAlias)
             return;
 
-        var pos = leftHandAlias.position + posOffsetFromHand;
-        var rot = Quaternion.Euler(eulerOffsetFromHand) * leftHandAlias.rotation;
+        var pos = handAlias.position + posOffsetFromHand;
+        var rot = Quaternion.Euler(eulerOffsetFromHand) * handAlias.rotation;
         transform.SetPositionAndRotation(pos, rot);
     }
 }
