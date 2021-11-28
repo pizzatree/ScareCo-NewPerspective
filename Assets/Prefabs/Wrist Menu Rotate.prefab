@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 60002187050185970}
   - component: {fileID: 60002187050185981}
   m_Layer: 0
-  m_Name: 'Wrist Menu '
+  m_Name: Wrist Menu Rotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
