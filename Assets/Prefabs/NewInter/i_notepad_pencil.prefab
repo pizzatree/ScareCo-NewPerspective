@@ -856,7 +856,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.034034066, y: 0.025771618, z: 0.02032417}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4500326804542706447
 GameObject:
@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 5941778423438982122}
   - component: {fileID: 4585827813108465124}
   m_Layer: 0
-  m_Name: I_notepad_pencil
+  m_Name: i_notepad_pencil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
