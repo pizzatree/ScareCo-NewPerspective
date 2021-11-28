@@ -226,8 +226,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5.3634796, z: 12.357124}
+  m_Center: {x: 0, y: 0.8488693, z: -0.41391563}
 --- !u!1 &3269476680105027348
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 9074143347226809721}
   - component: {fileID: 1169977865734394743}
   m_Layer: 0
-  m_Name: Interactions.Interactable_3_scissors1 1
+  m_Name: i_scissors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
